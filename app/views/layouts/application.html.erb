@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hospill</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <header class="header">
+      <div class="head_name">
+        
+       <%= link_to root_path do %>
+         <%= image_tag("hospil_logo.png", alt: "会社ロゴ", class: "company_logo") %>
+       <% end %>
+
+        <div class="top_button">
+          <%= link_to "予約する", new_request_path, class: "top_button_content" %> 
+          <%# <%= link_to "予約履歴を見る", request_path(@request), class: "top_button_content" %>
+          <a class="top_button_content" href=#>よくあるご質問</a>
+          <a class="top_button_content" href=#>予約履歴を見る</a>
+          <a class="top_button_content" href=#>マイページ</a>
+          <a class="top_button_content" href=#>ログイン</a>
+          <a class="top_button_content"href=#>新規登録</a>
+        </div>
+      </div>
+    </header>
+
+    <%= yield %>
+     <footer>
+      <div class ="footer_content">
+        <div class="footer_statements">まずは、お気軽にお問い合わせください！</div>
+          <div class="btn_detail"> <a href=# class="btn-content">お電話はこちら</a></div>
+    </footer>
+    
+  </body>
+</html>
